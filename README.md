@@ -21,4 +21,3 @@ Boggle is a word game that is played using a grid of letters. The goal is to fin
 - JavaScript (For frontend interactivity)
 - HTML/CSS
 - Axios (For making AJAX requests)
-- Jasmine (For frontend testing) [Optional, if you have included it]
