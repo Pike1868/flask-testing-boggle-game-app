@@ -41,11 +41,13 @@ class BoggleGame {
     let word = response.data.word;
 
     if (guessResponse === "ok") {
-      this.handleValidWord(word);
+      this.displayFeedback("Word is valid and exists on the board");
+      this.updateScore(word);
+      this.addWordToSet(word);
     } else if (guessResponse === "not-on-board") {
-      this.handleWordNotOnBoard();
+      this.displayFeedback("Word is not on board");
     } else {
-      this.handleInvalidWord();
+      this.displayFeedback("Not a valid word");
     }
 
     setTimeout(() => {
@@ -53,22 +55,6 @@ class BoggleGame {
     }, 1000);
   }
 
-  handleValidWord(word) {
-    let message = "Word is valid and exists on the board";
-    this.displayFeedback(message);
-    this.updateScore(word);
-    this.addWordToSet(word);
-  }
-
-  handleWordNotOnBoard() {
-    let message = "Word is not on board";
-    this.displayFeedback(message);
-  }
-
-  handleInvalidWord() {
-    let message = "Not a valid word";
-    this.displayFeedback(message);
-  }
   addWordToSet(word) {
     this.wordsGuessed.add(word);
   }
